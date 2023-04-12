@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SpeechRecognitionTool 示例</title>
+  </head>
+  <body>
+    <div>
+      <button id="start-button">开始</button>
+      <button id="stop-button">停止</button>
+      <button id="speak-button">播放语音</button>
+    </div>
+    <script type="module">
+      import SpeechRecognitionTool from '../lib/index.js'
+      const recognizer = new SpeechRecognitionTool()
+
+     const startButton = document.querySelector('#start-button')
+      startButton.addEventListener('click', () => {
+        recognizer.start()
+      })
+
+      const stopButton = document.querySelector('#stop-button')
+      stopButton.addEventListener('click', () => {
+        recognizer.end()
+        console.log('识别结果：', recognizer.transcript)
+      })
+
+      const speakButton = document.querySelector('#speak-button')
+      speakButton.addEventListener('click', () => {
+        recognizer.speak('你好，世界！', () => {
+          console.log('语音播放完毕')
+        })
+      })
+    </script>
+  </body>
+</html>

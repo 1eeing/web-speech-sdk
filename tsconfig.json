@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "target": "ES5",
+    "lib": ["DOM", "ES2020"],
+    "sourceMap": false,
+    "moduleResolution": "node",
+    "strict": true,
+    "declaration": true,
+    "downlevelIteration": true,
+    "allowSyntheticDefaultImports": true,
+    "typeRoots": ["./node_modules/@types"],
+    "resolveJsonModule": true,
+    "declarationDir": "./lib",
+    "noImplicitAny": false,
+    "outDir": "./lib"
+  },
+  "include": ["./src"]
+}
